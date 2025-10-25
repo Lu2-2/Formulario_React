@@ -22,7 +22,7 @@ const Formulario = () => {
                 <CampoTexto label='Nome' placeholder='Digite o seu nome'/>
                 <ListaSuspensa label='Seu cargo' item={cargos}/>
                 <Foto label='Envie sua foto'/>
-                <Enviar></Enviar>
+                <Enviar texto='Criar card'></Enviar>
             </form>
         </section>
     )
