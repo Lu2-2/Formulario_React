@@ -1,0 +1,22 @@
+.campo_foto{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.campo_foto label{
+    margin: 10px 0;
+}
+
+.campo_foto input{
+    font-size: 1.5rem;
+    width: 50rem;
+    height: 35px;
+    outline: none;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+    border-radius: 5px;
+    padding: 24px;
+}

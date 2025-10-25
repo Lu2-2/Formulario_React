@@ -1,0 +1,17 @@
+.enviar_btn{
+    padding: 24px 10px;
+}
+
+.enviar_btn button{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #4C71FE;
+    box-shadow: 5px 5px 15px #4C71FE;
+    border-radius: 2px;
+    width: 8em;
+    height: 50px;
+    cursor: pointer;
+}

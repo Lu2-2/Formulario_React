@@ -1,0 +1,34 @@
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campo_texto{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.campo_texto label{
+    margin: 10px 0;
+}
+
+.campo_texto input, select{
+    font-size: 1.5rem;
+    width: 50rem;
+    height: 50px;
+    outline: none;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+    border-radius: 5px;
+    padding: 24px;
+}
+
+.campo_texto select{
+    height: 70px;
+}
