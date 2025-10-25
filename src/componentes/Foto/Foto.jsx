@@ -4,7 +4,7 @@ const Foto = (props) => {
     return(
         <div className='campo_foto'>
             <label>{props.label}</label>
-            <input type="file"/>
+            <input required={props.obrigatorio} type='file'/>
         </div>
     )
 }
