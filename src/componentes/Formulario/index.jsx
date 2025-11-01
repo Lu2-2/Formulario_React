@@ -5,7 +5,7 @@ import Foto from '../Foto/Foto'
 import Enviar from '../Enviar/Enviar'
 import { useState } from 'react'
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const cargos = [
         'Analista de dados', 
@@ -15,14 +15,18 @@ const Formulario = () => {
         'Front-End',
         'UX e Desing',
     ]
-
+    
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
-
+    
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('Formulário foi submitido')
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+        })
     }
 
     return (
@@ -36,7 +40,7 @@ const Formulario = () => {
                 <Foto obrigatorio={true} label='Envie sua foto' valor={imagem} 
                 aoAlterado={valor => setImagem(valor)}/>
                 <Enviar texto='Criar card'></Enviar>
-            </form>
+            </form>            
         </section>
     )
 }
