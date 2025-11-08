@@ -1,68 +1,59 @@
+import { useState } from 'react';
 import Banner from './componentes/banner/banner';
 import Formulario from './componentes/Formulario';
-import Colaboradores from './componentes/Colaboradores/Colaboradores';
-import { useState } from 'react';
 import Time from './componentes/Time';
 
 function App() {
 
-
-  
   const times = [
     {
-      nome:'Analisa de dados',
-      corPrimaria:'',
-      corSegundaria:''
+      nome: 'Front-end',
+      corPrimaria: '#82CFFA',
+      corSecundaria: '#E8F8FF'
     },
-
     {
-      nome:'Back-End',
-      corPrimaria:'',
-      corSegundaria:''
+      nome: 'Data Science',
+      corPrimaria: '#A6D157',
+      corSecundaria: '#F0F8E2'
     },
-    
     {
-      nome:'Ciber Security',
-      corPrimaria:'',
-      corSegundaria:''
+      nome: 'Devops',
+      corPrimaria: '#E06B69',
+      corSecundaria: '#FDE7E8'
     },
-
     {
-      nome:'Data Science',
-      corPrimaria:'',
-      corSegundaria:''
+      nome: 'Mobile',
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
     },
-
     {
-      nome:'Front-End',
-      corPrimaria:'',
-      corSegundaria:''
+      nome: 'UX e Design',
+      corPrimaria: '#FFBA05',
+      corSecundaria: '#FFF5D9'
     },
-
     {
-      nome:'Ux e Desing',
-      corPrimaria:'',
-      corSegundaria:''
-    }
+      nome: 'Segurança da Informação',
+      corPrimaria: '#FF8A29',
+      corSecundaria: '#FFEEDF'
+    },
   ]
 
-  const [colaoradores, setColaboradores] = useState([])
-  
-  const aoNovoColaboradorAdicioonado = (colaborador) => {
-    console.log(colaborador)
-    setColaboradores([...colaboradores,colaborador])
+  const [colaboradores, setColaboradores] = useState([])
+    
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+        console.log(colaborador)
+        setColaboradores([...colaboradores,colaborador])
   }
 
-  return (
+return (
     <div className="App">
-      <Banner/>
-      <Formulario aoColaboradorCadastrado={aoNovoColaboradorAdicioonado}/>
-      <Colaboradores label='Cartão de funcionário'></Colaboradores>
-      <Time nome='Programação'></Time>
-      <Time nome='Front-End'></Time>
+      <Banner />
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
 
+      {times.map(time =>  <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
     </div>
   );
-}
 
+
+}
 export default App;
